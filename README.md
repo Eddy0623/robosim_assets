@@ -36,7 +36,7 @@
 > 
 > 使用 JointModelGroup 抽象概念，可以非常方便地选择一系列关节和末端执行器进行驱动。这是基于 Moveit2 JointModelGroup 定义的概念。
 > 
-> 您可以自行手写一份 SRDF 文件，模仿 `mujoco/assets/robots/franka_panda/panda.srdf` 的内容，您可以自由规定哪些关节在一个组里面最方便您之后的操纵。如不提供，robosim 会将所有位于一个 kinematic tree 上的关节放在一个 JointModelGroup 中。
+> 您可以自行手写一份 SRDF 文件，模仿 [`mujoco/assets/robots/franka_panda/panda.srdf`](./mujoco/assets/robots/franka_panda/panda.srdf) 的内容，您可以自由规定哪些关节在一个组里面最方便您之后的操纵。如不提供，robosim 会将所有位于一个 kinematic tree 上的关节放在一个 JointModelGroup 中。
 > 
 > 您也可以借助 ROS2 Moveit2 官方提供的 wizard（`ros2 run moveit_setup_assistant moveit_set
 up_assistant`），导入您的机器人模型，一步步地生成，拿到其中的 `*.srdf` 即可；
