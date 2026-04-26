@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="robot_vacuum">
+    <group name="base_wheels">
+        <joint name="rv_left_wheel_joint"/>
+        <joint name="rv_right_wheel_joint"/>
+    </group>
+
+    <group_state group="base_wheels" name="default">
+        <joint name="rv_left_wheel_joint" value="0"/>
+        <joint name="rv_right_wheel_joint" value="0"/>
+    </group_state>
+</robot>
