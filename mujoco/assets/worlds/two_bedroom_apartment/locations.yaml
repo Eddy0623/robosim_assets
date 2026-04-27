@@ -1,0 +1,103 @@
+scene: two_bedroom_apartment
+frame: world
+locations:
+  start:
+    aliases:
+    - 起点
+    - 初始位置
+    - start
+    target_pose:
+      x: 2.0
+      y: -3.0
+      yaw: 0.0
+    nearest_waypoint: wp_start
+  test_left:
+    aliases:
+    - 左侧测试点
+    - left test
+    target_pose:
+      x: 1.7
+      y: -3.0
+      yaw: 3.14
+    nearest_waypoint: wp_left
+  test_center:
+    aliases:
+    - 中间测试点
+    - center test
+    target_pose:
+      x: 2.3
+      y: -2.4
+      yaw: 0.7
+    nearest_waypoint: wp_center
+  test_north:
+    aliases:
+    - 上方测试点
+    - north test
+    target_pose:
+      x: 2.0
+      y: -2.0
+      yaw: 1.5
+    nearest_waypoint: wp_north
+  living_room:
+    aliases:
+    - 客厅
+    target_pose:
+      x: 8.069
+      y: 1.108
+      yaw: 0.054
+  bathroom:
+    aliases:
+    - 卫生间
+    target_pose:
+      x: 10.509
+      y: 6.38
+      yaw: 0.482
+  dining_room:
+    aliases:
+    - 餐厅
+    target_pose:
+      x: 5.889
+      y: 11.603
+      yaw: 1.479
+  bedroom2:
+    aliases:
+    - 房间2
+    target_pose:
+      x: 1.692
+      y: 8.718
+      yaw: -3.07
+  bedroom1:
+    aliases:
+    - 房间1
+    target_pose:
+      x: 2.0
+      y: -3.0
+      yaw: -0.0
+waypoints:
+  wp_start:
+    pose:
+      x: 2.0
+      y: -3.0
+      yaw: 0.0
+  wp_left:
+    pose:
+      x: 1.7
+      y: -3.0
+      yaw: 3.14
+  wp_center:
+    pose:
+      x: 2.3
+      y: -2.4
+      yaw: 0.7
+  wp_north:
+    pose:
+      x: 2.0
+      y: -2.0
+      yaw: 1.5
+edges:
+- - wp_start
+  - wp_left
+- - wp_start
+  - wp_center
+- - wp_center
+  - wp_north
