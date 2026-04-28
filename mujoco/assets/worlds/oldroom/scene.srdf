@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="scene_living_room">
+    <group name="left_arm">
+        <joint name="vx300s_left/waist"/>
+        <joint name="vx300s_left/shoulder"/>
+        <joint name="vx300s_left/elbow"/>
+        <joint name="vx300s_left/forearm_roll"/>
+        <joint name="vx300s_left/wrist_angle"/>
+        <joint name="vx300s_left/wrist_rotate"/>
+    </group>
+
+    <group name="left_gripper">
+        <joint name="vx300s_left/left_finger"/>
+        <joint name="vx300s_left/right_finger"/>
+    </group>
+
+    <group name="right_arm">
+        <joint name="vx300s_right/waist"/>
+        <joint name="vx300s_right/shoulder"/>
+        <joint name="vx300s_right/elbow"/>
+        <joint name="vx300s_right/forearm_roll"/>
+        <joint name="vx300s_right/wrist_angle"/>
+        <joint name="vx300s_right/wrist_rotate"/>
+    </group>
+
+    <group name="right_gripper">
+        <joint name="vx300s_right/left_finger"/>
+        <joint name="vx300s_right/right_finger"/>
+    </group>
+
+    <end_effector
+        name="left_ee"
+        parent_group="left_arm"
+        parent_link="vx300s_left/gripper_link"
+        group="left_arm"/>
+
+    <end_effector
+        name="right_ee"
+        parent_group="right_arm"
+        parent_link="vx300s_right/gripper_link"
+        group="right_arm"/>
+</robot>
