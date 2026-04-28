@@ -1003,6 +1003,13 @@
 
     </actuator>
 
+    <keyframe>
+        <!-- Keep the two tabletop VX300s arms clear of each other at startup. -->
+        <key name="home"
+             qpos="-1.5 0 0.05 1 0 0 0 0 0 0 0 0 0 0 -0.96 1.16 0 -0.3 0 0.03 -0.03 0 -0.96 1.16 0 -0.3 0 0.03 -0.03 0 0 0 0 0 0"
+             ctrl="0 0 0 0 0 0 0 0 0 0 0 -0.96 1.16 0 -0.3 0 0.03 -0.03 0 -0.96 1.16 0 -0.3 0 0.03 -0.03"/>
+    </keyframe>
+
     <!-- Sensors -->
     <!-- <sensor>
         <rangefinder name="lidar_0" site="s_lidar_0"/>
