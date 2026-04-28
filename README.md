@@ -9,6 +9,7 @@
 - `mujoco/assets/robots/franka_panda`
 - `mujoco/assets/robots/robot_vacuum`
 - `mujoco/assets/robots/vx300s_cohesive`
+- `mujoco/assets/robots/robot_vacuum`
 
 现在支持的场景：
 
