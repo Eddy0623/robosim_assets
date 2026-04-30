@@ -9,6 +9,7 @@
 - `mujoco/assets/robots/franka_panda`
 - `mujoco/assets/robots/robot_vacuum`
 - `mujoco/assets/robots/vx300s_cohesive`
+- `mujoco/assets/robots/unitree_g1`
 
 现在支持的场景：
 
