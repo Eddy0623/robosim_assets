@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<robot name="simple_arm">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.18 0.05"/>
+      </geometry>
+      <material name="base_gray">
+        <color rgba="0.45 0.47 0.50 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.18 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link1">
+    <inertial>
+      <origin xyz="0.25 0 0" rpy="0 0 0"/>
+      <mass value="0.8"/>
+      <inertia ixx="0.005" ixy="0" ixz="0" iyy="0.025" iyz="0" izz="0.025"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.25 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.50 0.06 0.06"/>
+      </geometry>
+      <material name="link_blue">
+        <color rgba="0.20 0.42 0.74 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.25 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.50 0.06 0.06"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link2">
+    <inertial>
+      <origin xyz="0.20 0 0" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.003" ixy="0" ixz="0" iyy="0.014" iyz="0" izz="0.014"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.20 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.40 0.05 0.05"/>
+      </geometry>
+      <material name="link_green">
+        <color rgba="0.24 0.58 0.36 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.20 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.40 0.05 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tool_link">
+    <inertial>
+      <origin xyz="0.03 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.03 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.06 0.08 0.08"/>
+      </geometry>
+      <material name="tool_orange">
+        <color rgba="0.82 0.43 0.18 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.03 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.06 0.08 0.08"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="shoulder_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0.08" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="80" velocity="2.0"/>
+  </joint>
+
+  <joint name="elbow_joint" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0.50 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="60" velocity="2.0"/>
+  </joint>
+
+  <joint name="tool_fixed_joint" type="fixed">
+    <parent link="link2"/>
+    <child link="tool_link"/>
+    <origin xyz="0.40 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <robosim>
+    <camera
+      name="world_camera"
+      link="world"
+      xyz="1.2 -1.2 0.8"
+      rpy="0.4 0 2.35"
+      width="320"
+      height="240"
+      fov="60"
+      near="0.01"
+      far="10.0"/>
+
+    <force_torque
+      name="ft_sensor"
+      joint="elbow_joint"/>
+  </robosim>
+</robot>
